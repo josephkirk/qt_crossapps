@@ -1,0 +1,1 @@
+python.executeFile(@"D:\Works\Code\Qt_crossapps\Libs\server.py")

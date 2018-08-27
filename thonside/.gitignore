@@ -102,33 +102,3 @@ venv.bak/
 
 # mypy
 .mypy_cache/
-
-samples/network/http/http.pyc
-samples/network/README
-samples/network/blockingfortuneclient.py
-samples/network/blockingfortuneclient.pyc
-samples/network/broadcastreceiver.py
-samples/network/broadcastreceiver.pyc
-samples/network/broadcastsender.py
-samples/network/broadcastsender.pyc
-samples/network/fortuneclient.py
-samples/network/fortuneclient.pyc
-samples/network/fortuneserver.py
-samples/network/fortuneserver.pyc
-samples/network/http.py
-samples/network/http.pyc
-samples/network/loopback.py
-samples/network/loopback.pyc
-samples/network/threadedfortuneserver.py
-samples/network/threadedfortuneserver.pyc
-samples/network/ftp/ftp.py
-samples/network/ftp/ftp.pyc
-samples/network/ftp/ftp.qrc
-samples/network/ftp/ftp_rc.py
-samples/network/ftp/ftp_rc.pyc
-samples/network/ftp/images/cdtoparent.png
-samples/network/ftp/images/dir.png
-samples/network/ftp/images/file.png
-samples/network/http/authenticationdialog.ui
-samples/network/http/http.py
-

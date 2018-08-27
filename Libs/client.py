@@ -21,7 +21,7 @@ class CodeEdit(QW.QTextEdit):
         super(CodeEdit, self).__init__(*args, **kws)
 
 class ClientDlg(QW.QWidget):
-    serverDataPath = os.path.normpath("{}/SparxTA/AppServer/ServerDatas.json".format(os.environ["LOCALAPPDATA"]))
+    serverDataPath = os.path.normpath("{}/AppServer/ServerDatas.json".format(os.environ["LOCALAPPDATA"]))
     def __init__(self, parent=None):
         super(ClientDlg, self).__init__(parent)
 

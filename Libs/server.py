@@ -49,7 +49,7 @@ def runFile(filePath):
     exec(open(filePath).read(), globals(), locals())
 
 class ServerDlg(QW.QPushButton):
-    serverDataPath = "{}/SparxTA/AppServer/ServerDatas.json".format(os.environ["LOCALAPPDATA"])
+    serverDataPath = "{}/AppServer/ServerDatas.json".format(os.environ["LOCALAPPDATA"])
     def __init__(self, parent=None, app=None):
         super(ServerDlg, self).__init__("&Close Server", parent)
         self.setWindowFlags(Qt.WindowStaysOnTopHint | Qt.WindowCloseButtonHint | Qt.Window)

@@ -56,6 +56,7 @@ class ServerDlg(QW.QPushButton):
         self.setAttribute(Qt.WA_QuitOnClose)
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.setFocusPolicy(Qt.NoFocus)
+        self.setObjectName("Qt_Crossapp_Server")
         font = self.font()
         font.setPointSize(18)
         self.setFont(font)

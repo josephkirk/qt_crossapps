@@ -48,30 +48,30 @@ for app, pkgs in app_dict.items():
 def runFile(filePath):
     exec(open(filePath).read(), globals(), locals())
 
-class ServerDlg(QW.QPushButton):
+class ServerDlg(QC.QObject):
     serverDataPath = "{}/AppServer/ServerDatas.json".format(os.environ["LOCALAPPDATA"])
     def __init__(self, parent=None, app=None):
-        super(ServerDlg, self).__init__("&Close Server", parent)
-        self.setWindowFlags(Qt.WindowStaysOnTopHint | Qt.WindowCloseButtonHint | Qt.Window)
-        self.setAttribute(Qt.WA_QuitOnClose)
-        self.setAttribute(Qt.WA_DeleteOnClose)
-        self.setFocusPolicy(Qt.NoFocus)
+        super(ServerDlg, self).__init__(parent=parent)
+        # self.setWindowFlags(Qt.WindowStaysOnTopHint | Qt.WindowCloseButtonHint | Qt.Window)
+        # self.setAttribute(Qt.WA_QuitOnClose)
+        # self.setAttribute(Qt.WA_DeleteOnClose)
+        # self.setFocusPolicy(Qt.NoFocus)
         self.setObjectName("Qt_Crossapp_Server")
-        font = self.font()
-        font.setPointSize(18)
-        self.setFont(font)
+        # font = self.font()
+        # font.setPointSize(18)
+        # self.setFont(font)
         self.initServerData()
-        self.resize(200,50)
-        self.setSizePolicy(QW.QSizePolicy.Fixed, QW.QSizePolicy.Fixed)
-        self.clicked.connect(self.close)
+        # self.resize(200,50)
+        # self.setSizePolicy(QW.QSizePolicy.Fixed, QW.QSizePolicy.Fixed)
+        # self.clicked.connect(self.close)
 
-        self.app = app
+        self.app = parent
         self.appDir = self.app.applicationFilePath()
         self.appPid = self.app.applicationPid()
         self.appname = self.app.applicationName()
         if not self.appname:
             self.appname = app_name
-        self.app.aboutToQuit.connect(self.close)
+        # self.app.aboutToQuit.connect(self.close)
         self.app.focusChanged.connect(self.updateServerStatus)
         # self.app.lastWindowClosed.connect(self.close)
         # self.app.applicationStateChanged.connect(self.updateServerStatus)
@@ -82,7 +82,7 @@ class ServerDlg(QW.QPushButton):
         self.tcpServer.newConnection.connect(self.addConnection)
         self.connections = []
 
-        self.setWindowTitle("{} Server".format(self.appname))
+        # self.setWindowTitle("{} Server".format(self.appname))
         self.initServer()
 
     @property
@@ -200,10 +200,10 @@ class ServerDlg(QW.QPushButton):
     #         sys.exit()
         # self.parent().hide()
 
-    def closeEvent(self, event):
-        self.tcpServer.close()
-        self.serverEnvExit()
-        event.accept()
+    # def closeEvent(self, event):
+    #     self.tcpServer.close()
+    #     self.serverEnvExit()
+    #     event.accept()
         # self.app.quit()
 
     def resizeEvent(self, event):
@@ -279,7 +279,7 @@ if __name__ == "__main__":
     if not app:
         app = QW.QApplication(sys.argv)
         appIsInstance = False
-    server = ServerDlg(app=app)
+    server = ServerDlg(parent=app)
     # server.show()
     if not appIsInstance:
         try:

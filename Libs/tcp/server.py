@@ -40,7 +40,7 @@ for app, pkgs in app_dict.items():
     for pkg, apv in pkgs.items():
         try:
             exec("import {} as {}".format(pkg, apv),globals(), locals())
-            print("{} module init----import {} as {}----".format(app,pkg,apv))
+            print("{} server init----import {} as {}----".format(app,pkg,apv))
             app_name = app
         except:
             pass
@@ -281,6 +281,9 @@ if __name__ == "__main__":
         appIsInstance = False
     server = ServerDlg(parent=app)
     # server.show()
+    if app_name == "UE4":
+        root_window = ue.get_editor_window()
+        root_window.set_as_owner(server.winId())
     if not appIsInstance:
         try:
             sys.exit(app.exec_())
